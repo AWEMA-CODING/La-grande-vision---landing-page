@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="La Grande Vision prépare son site et sa boutique. Contactez notre équipe sur WhatsApp dès maintenant."
+    />
+    <title>La Grande Vision — Ouverture prochaine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ambient-bg" aria-hidden="true">
+      <span class="halo halo-1"></span>
+      <span class="halo halo-2"></span>
+      <span class="halo halo-3"></span>
+      <span class="precision-grid"></span>
+    </div>
+
+    <main class="page-shell" id="appRoot">
+      <section class="hero" aria-labelledby="mainTitle">
+        <p class="eyebrow">La Grande Vision</p>
+        <h1 id="mainTitle">Votre vision mérite mieux.</h1>
+        <p class="subtitle">
+          Nous préparons une expérience moderne, précise et élégante pour votre santé
+          visuelle.
+        </p>
+
+        <div class="focus-control card">
+          <div class="focus-control__head">
+            <label for="focusSlider">Ajustez votre vision</label>
+            <output id="clarityValue" for="focusSlider" aria-live="polite">28%</output>
+          </div>
+          <input
+            id="focusSlider"
+            class="focus-slider"
+            type="range"
+            min="0"
+            max="100"
+            value="28"
+            aria-describedby="focusHint"
+          />
+          <p id="focusHint" class="focus-hint">
+            Faites glisser pour passer d'une vision floue à une vision nette.
+          </p>
+        </div>
+      </section>
+
+      <section class="stage" aria-label="Zone immersive de mise au point">
+        <!-- Couche nette de fond (toujours visible) -->
+        <div class="scene scene--sharp" aria-hidden="true">
+          <div class="scene-core"></div>
+        </div>
+
+        <!-- Couche floue + masque de lunettes -->
+        <div class="scene scene--blur" id="blurLayer" aria-hidden="true">
+          <div class="scene-core"></div>
+          <div class="glasses" id="glasses" role="presentation">
+            <div class="lens lens--left"></div>
+            <div class="bridge"></div>
+            <div class="lens lens--right"></div>
+          </div>
+        </div>
+
+        <div class="stage-message card" id="revealBlock">
+          <p class="stage-status">Mise au point en cours…</p>
+          <h2>Le site web et la boutique sont actuellement en construction.</h2>
+          <p>
+            Mais notre équipe reste disponible pour vous renseigner, vous orienter et
+            répondre à vos besoins.
+          </p>
+          <p class="clarity-soon" id="claritySoon" hidden>La clarté arrive bientôt.</p>
+        </div>
+      </section>
+
+      <section class="contact card" aria-labelledby="contactTitle">
+        <h2 id="contactTitle">Un besoin immédiat ?</h2>
+        <p>
+          Échangez avec un expert dès maintenant. Réponse humaine, claire et rapide via
+          WhatsApp.
+        </p>
+
+        <a
+          id="whatsappPrimary"
+          class="btn btn-primary"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Parler à un expert sur WhatsApp
+        </a>
+
+        <details class="lead-capture" id="leadDisclosure">
+          <summary class="btn btn-secondary">Être informé de l’ouverture</summary>
+          <form id="leadForm" class="lead-form" novalidate>
+            <div class="field">
+              <label for="leadName">Nom</label>
+              <input id="leadName" name="leadName" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="leadNeed">Besoin</label>
+              <select id="leadNeed" name="leadNeed" required>
+                <option value="" selected disabled>Choisissez votre besoin</option>
+                <option value="Lunettes">Lunettes</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Informations">Informations</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-tertiary">Envoyer via WhatsApp</button>
+            <p class="form-note">Aucune donnée n’est stockée sur le site.</p>
+          </form>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>La Grande Vision</p>
+      <p>Optique &amp; santé visuelle</p>
+      <p>Ouverture prochaine</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
